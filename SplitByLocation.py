@@ -24,15 +24,12 @@ deleteList = []
 filelist = [a for a in os.listdir(finishedFolder)]
 for a in filelist:
 	statinfo = os.stat(os.path.join(finishedFolder, a))
-	c = ''
 	c = statinfo.st_size
 	if c < 1000 and a.endswith('.shp'):
-		print a
 		b = os.path.splitext(a)
 		deleteList.append(b)
 	else:
 		d = 1
-filelist2 = []
 for b in deleteList:
     for w in filelist:
         if w.startswith(b) and os.path.join(finishedFolder,w):
